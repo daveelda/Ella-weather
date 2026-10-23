@@ -14,7 +14,7 @@ export default function Header({ theme, onToggleTheme }: HeaderProps) {
           <Cloud size={28} strokeWidth={1.8} />
         </div>
         <div className="header-text">
-          <span className="header-name">Agape Weather</span>
+          <span className="header-name">ELLA'a Weather</span>
           <span className="header-tagline">Weather, wherever life takes you.</span>
         </div>
       </div>
