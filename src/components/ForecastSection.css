@@ -1,0 +1,33 @@
+.forecast-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.forecast-heading {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+}
+
+.forecast-grid {
+  display: flex;
+  gap: 16px;
+}
+
+@media (max-width: 520px) {
+  .forecast-grid {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .forecast-card {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px 20px;
+    gap: 12px;
+  }
+  .fc-icon { margin: 0; }
+  .fc-condition { min-height: unset; }
+}

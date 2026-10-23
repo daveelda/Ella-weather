@@ -1,0 +1,62 @@
+.error-state {
+  background: var(--card-bg);
+  border: 1px solid rgba(255,107,107,0.25);
+  border-radius: var(--radius);
+  padding: 48px 36px;
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  animation: fadeSlideIn 0.3s ease;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.error-icon {
+  color: #ff9a9a;
+  filter: drop-shadow(0 2px 12px rgba(255,107,107,0.3));
+}
+
+.error-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.error-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.error-message {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+.error-retry {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,107,107,0.15);
+  border: 1px solid rgba(255,107,107,0.3);
+  color: #ff9a9a;
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background var(--transition), transform var(--transition);
+  margin-top: 4px;
+}
+
+.error-retry:hover {
+  background: rgba(255,107,107,0.25);
+  transform: translateY(-1px);
+}

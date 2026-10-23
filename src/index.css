@@ -1,0 +1,100 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --sky-blue: #87ceeb;
+  --light-blue: #b8def0;
+  --mid-blue: #4a90d9;
+  --navy: #0f2044;
+  --navy-mid: #1a3560;
+  --violet: #6c63ff;
+  --violet-light: #a89cf7;
+  --white: #ffffff;
+  --white-soft: rgba(255,255,255,0.92);
+  --glass: rgba(255,255,255,0.18);
+  --glass-border: rgba(255,255,255,0.32);
+  --glass-dark: rgba(15,32,68,0.55);
+  --shadow: 0 8px 32px rgba(15,32,68,0.22);
+  --shadow-card: 0 4px 24px rgba(15,32,68,0.16);
+  --radius: 20px;
+  --radius-sm: 12px;
+  --transition: 0.25s ease;
+
+  /* dark mode vars */
+  --bg-gradient-start: #0c1b3a;
+  --bg-gradient-end: #1a2f5e;
+  --text-primary: #e8f4fd;
+  --text-secondary: rgba(232,244,253,0.72);
+  --card-bg: rgba(255,255,255,0.1);
+  --card-border: rgba(255,255,255,0.2);
+}
+
+[data-theme="light"] {
+  --bg-gradient-start: #c8e6f7;
+  --bg-gradient-end: #e8f4fd;
+  --text-primary: #0f2044;
+  --text-secondary: rgba(15,32,68,0.72);
+  --card-bg: rgba(255,255,255,0.65);
+  --card-border: rgba(255,255,255,0.85);
+  --glass: rgba(255,255,255,0.45);
+  --glass-border: rgba(255,255,255,0.7);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  min-height: 100vh;
+  color: var(--text-primary);
+  transition: background 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+/* Animated background clouds */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 800px 400px at 10% 20%, rgba(108,99,255,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 600px 300px at 90% 80%, rgba(74,144,217,0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--violet-light);
+  outline-offset: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(108,99,255,0.4); border-radius: 3px; }

@@ -1,0 +1,109 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  background: var(--glass);
+  border: 1.5px solid var(--glass-border);
+  border-radius: 14px;
+  padding: 6px 6px 6px 16px;
+  gap: 8px;
+  backdrop-filter: blur(16px);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.search-wrapper:focus-within {
+  border-color: var(--violet-light);
+  box-shadow: 0 0 0 3px rgba(108,99,255,0.15);
+}
+
+.search-wrapper.search-error {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255,107,107,0.15);
+}
+
+.search-icon {
+  color: var(--text-secondary);
+  display: flex;
+  flex-shrink: 0;
+}
+
+.search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: var(--text-primary);
+  padding: 8px 0;
+  min-width: 0;
+}
+
+.search-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.search-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.search-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, var(--mid-blue), var(--violet));
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(108,99,255,0.3);
+}
+
+.search-button:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(108,99,255,0.4);
+}
+
+.search-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.search-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.search-validation {
+  font-size: 0.82rem;
+  color: #ff9a9a;
+  padding-left: 4px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@media (max-width: 480px) {
+  .search-button span {
+    display: none;
+  }
+  .search-button {
+    padding: 10px 12px;
+  }
+}
